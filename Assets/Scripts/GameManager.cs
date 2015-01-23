@@ -5,6 +5,9 @@ public class GameManager : MonoBehaviour
     public static GameManager _instance;
     private bool _darknessEnabled = false;
     private bool _jumpEnabled = true;
+    private bool _armageddonEnabled = false;
+
+    public bool[] ActivePlayers = {true, true, false};
 
     public static bool JumpEnabled
     {
@@ -14,6 +17,11 @@ public class GameManager : MonoBehaviour
     public static bool DarknessEnabled
     {
         get { return _instance._darknessEnabled; }
+    }
+
+    public static bool ArmageddonEnabled
+    {
+        get { return _instance._armageddonEnabled; }
     }
 
     private void Awake()
@@ -57,5 +65,15 @@ public class GameManager : MonoBehaviour
     public static void ToggleDarkness()
     {
         _instance._toggleDarkness();
+    }
+
+    private void _toggleArmageddon()
+    {
+        _armageddonEnabled = !_armageddonEnabled;
+    }
+
+    public static void ToggleArmageddon()
+    {
+        _instance._toggleArmageddon();
     }
 }

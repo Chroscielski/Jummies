@@ -5,6 +5,8 @@ public class LevelInitializer : MonoBehaviour
     public Light[] lights;
     public float DarknessMultiplier;
 
+    public GameObject ArmageddonPrefab;
+
     void Start()
     {
         if (GameManager.DarknessEnabled)
@@ -15,6 +17,9 @@ public class LevelInitializer : MonoBehaviour
             }
         }
 
-
+        if (GameManager.ArmageddonEnabled)
+        {
+            Instantiate(ArmageddonPrefab);
+        }
     }
 }

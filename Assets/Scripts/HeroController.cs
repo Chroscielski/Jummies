@@ -8,7 +8,7 @@ public class HeroController : MonoBehaviour
 
     public void Rotate(float xAxis, float yAxis)
     {
-        transform.RotateAround(transform.position, transform.up, Time.deltaTime * yAxis);
+        transform.rotation = Quaternion.LookRotation(new Vector3(xAxis, 0, yAxis), Vector3.up);
     }
 
     public void Move(float xAxis, float yAxis)

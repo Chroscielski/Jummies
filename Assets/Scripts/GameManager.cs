@@ -24,6 +24,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void _startRound()
+    {
+        DontDestroyOnLoad(gameObject);
+        Application.LoadLevel("Main");
+    }
+
+    public static void StartRound()
+    {
+        _instance._startRound();
+    }
+
     public static void ToggleJump()
     {
         _instance._toggleJump();
@@ -33,5 +44,4 @@ public class GameManager : MonoBehaviour
     {
         _jumpEnabled = !_jumpEnabled;
     }
-
 }

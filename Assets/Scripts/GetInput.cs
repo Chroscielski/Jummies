@@ -24,9 +24,9 @@ public class GetInput : MonoBehaviour
         //Player4
     }
 
-    private void Awake()
+    private void Start()
     {
-
+        GameManager.ToggleJump();
     }
 
 
@@ -38,7 +38,7 @@ public class GetInput : MonoBehaviour
 
     void GetPlayer1Input()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button0) && GameManager.JumpEnabled)
         {
             P1.Jump();
             Debug.Log("P1 Skacze");
@@ -59,7 +59,7 @@ public class GetInput : MonoBehaviour
 
     private void GetPlayer2Input()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick2Button0))
+        if (Input.GetKeyDown(KeyCode.Joystick2Button0) && GameManager.JumpEnabled)
         {
             P2.Jump();
             Debug.Log("P2 Skacze");

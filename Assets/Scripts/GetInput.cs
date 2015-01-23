@@ -34,6 +34,8 @@ public class GetInput : MonoBehaviour
     {
         GetPlayer1Input();
         GetPlayer2Input();
+        GetPlayer3Input();
+        GetPlayer4Input();
     }
 
     void GetPlayer1Input()
@@ -54,6 +56,7 @@ public class GetInput : MonoBehaviour
         float axis_4 = Input.GetAxis("Joy 1 Axis 4");
         
         P1.Move(axis_X, axis_Y);
+        P1.Rotate(axis_3, axis_4);
 
     }
 
@@ -75,6 +78,47 @@ public class GetInput : MonoBehaviour
         float axis_4 = Input.GetAxis("Joy 2 Axis 4");
         
         P2.Move(axis_X, axis_Y);
+        P2.Rotate(axis_3, axis_4);
+
+    }
+    private void GetPlayer3Input()
+    {
+        if (Input.GetKeyDown(KeyCode.Joystick3Button0) && GameManager.JumpEnabled)
+        {
+            P2.Jump();
+            Debug.Log("P3 Skacze");
+        }
+        if (Input.GetKeyDown(KeyCode.Joystick3Button2))
+        {
+            /*Player1.Attack()*/
+            Debug.Log("P3 Atakuje");
+        }
+        float axis_X = Input.GetAxis("Joy 3 Axis X");
+        float axis_Y = Input.GetAxis("Joy 3 Axis Y");
+        float axis_3 = Input.GetAxis("Joy 3 Axis 3");
+        float axis_4 = Input.GetAxis("Joy 3 Axis 4");
+
+        //P2.Move(axis_X, axis_Y);
+
+    }
+    private void GetPlayer4Input()
+    {
+        if (Input.GetKeyDown(KeyCode.Joystick4Button0) && GameManager.JumpEnabled)
+        {
+            P2.Jump();
+            Debug.Log("P4 Skacze");
+        }
+        if (Input.GetKeyDown(KeyCode.Joystick4Button2))
+        {
+            /*Player1.Attack()*/
+            Debug.Log("P4 Atakuje");
+        }
+        float axis_X = Input.GetAxis("Joy 4 Axis X");
+        float axis_Y = Input.GetAxis("Joy 4 Axis Y");
+        float axis_3 = Input.GetAxis("Joy 4 Axis 3");
+        float axis_4 = Input.GetAxis("Joy 4 Axis 4");
+
+        //P2.Move(axis_X, axis_Y);
 
     }
 }

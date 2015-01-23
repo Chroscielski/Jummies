@@ -6,6 +6,11 @@ public class HeroController : MonoBehaviour
     [SerializeField] private float jumpForce = 300.0f;
     [SerializeField] private float movementSpeed = 10.0f;
 
+    public void Rotate(float xAxis, float yAxis)
+    {
+        transform.RotateAround(transform.position, transform.up, Time.deltaTime * yAxis);
+    }
+
     public void Move(float xAxis, float yAxis)
     {
         rigidbody.velocity = new Vector3(xAxis * movementSpeed * Time.deltaTime, rigidbody.velocity.y, yAxis * movementSpeed * Time.deltaTime);

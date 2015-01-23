@@ -74,12 +74,12 @@ public class GetInput : MonoBehaviour
         float axis_3 = Input.GetAxis("Joy 2 Axis 3");
         float axis_4 = Input.GetAxis("Joy 2 Axis 4");
 
-        if (axis_3 != 0 || axis_4 != 0)
-         Debug.Log("P2 Rotuje! Axis 3: " + axis_3.ToString() + "4: " + axis_4.ToString());
+        if (axis_3 != 0 || axis_4 != 0) ;
+         //Debug.Log(axis_3);
         //Player1.rotate(axis_3, axis_4);
 
-        if (axis_X != 0 || axis_Y != 0)
-        Debug.Log("P2 Przesuwam! Axis X: " + axis_X.ToString() + "Y: " + axis_Y.ToString());
+            if (axis_X != 0 || axis_Y != 0) ;
+        //Debug.Log("P2 Przesuwam! Axis X: " + axis_X.ToString() + "Y: " + axis_Y.ToString());
         //Player1.rotate(axis_3, axis_4);
 
     }

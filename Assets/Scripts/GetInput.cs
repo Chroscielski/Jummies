@@ -5,7 +5,10 @@ public class GetInput : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetButtonDown()) ;
+        if (Input.GetButtonDown("Joy 1 X Button"))
+        {
+            
+        }
 
     }
 }

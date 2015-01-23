@@ -3,20 +3,13 @@ using System.Collections;
 
 public class HeroController : MonoBehaviour
 {
-    [SerializeField]
-    MeleeColiderController meleeColiderController;
-
-    void Update()
+    public void TakeHit(Vector3 fromVector3)
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            StartCoroutine(meleeColiderController.Attack());
-        }
+        Debug.Log("GETTING DAMAGE " + this.gameObject.name);
 
-    }
-
-    public void TakeDamage()
-    {
-        this.gameObject.rigidbody.AddForce(Vector3.forward * 400.0f);
+        fromVector3 = new Vector3(fromVector3.x,0.0f,fromVector3.z);
+        Vector3 myTmpVector3 = new Vector3(transform.position.x, 0, transform.position.z);
+        this.rigidbody.AddForce((myTmpVector3 - fromVector3)*100.0f);
+        this.rigidbody.AddForce(Vector3.up * 150.0f);
     }
 }

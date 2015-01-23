@@ -17,6 +17,6 @@ public class HeroController : MonoBehaviour
 
     public void TakeDamage()
     {
-        Debug.Log("TOOK DAMAGE BIJACZ");
+        this.gameObject.rigidbody.AddForce(Vector3.forward * 400.0f);
     }
 }

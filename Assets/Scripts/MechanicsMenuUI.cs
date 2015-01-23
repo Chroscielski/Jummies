@@ -5,6 +5,7 @@ public class MechanicsMenuUI : MonoBehaviour
 {
     public Dialog _dialog;
     public Toggle JumpToggle;
+    public Toggle DarknessToggle;
 
     public void ToggleJump()
     {
@@ -22,5 +23,19 @@ public class MechanicsMenuUI : MonoBehaviour
         JumpToggle.isOn = !JumpToggle.isOn;
     }
 
+    public void ToggleDarkness()
+    {
+        _dialog.Display(string.Format("Darkness will be " + (GameManager.DarknessEnabled ? "Disabled" : "Enabled")), ConfirmToggleDarkness, CancelToggleDarkness);
+    }
 
+    public void ConfirmToggleDarkness()
+    {
+        GameManager.ToggleDarkness();
+        GameManager.StartRound();
+    }
+
+    public void CancelToggleDarkness()
+    {
+        DarknessToggle.isOn = !DarknessToggle.isOn;
+    }
 }

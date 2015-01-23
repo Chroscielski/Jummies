@@ -3,15 +3,20 @@
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance;
+    private bool _darknessEnabled = false;
     private bool _jumpEnabled = true;
 
     public static bool JumpEnabled
     {
-        get {return _instance._jumpEnabled;}
-        
+        get { return _instance._jumpEnabled; }
     }
 
-    void Awake()
+    public static bool DarknessEnabled
+    {
+        get { return _instance._darknessEnabled; }
+    }
+
+    private void Awake()
     {
         if (_instance == null)
         {
@@ -20,7 +25,6 @@ public class GameManager : MonoBehaviour
         else if (_instance != this)
         {
             Destroy(gameObject);
-            return;
         }
     }
 
@@ -43,5 +47,15 @@ public class GameManager : MonoBehaviour
     private void _toggleJump()
     {
         _jumpEnabled = !_jumpEnabled;
+    }
+
+    private void _toggleDarkness()
+    {
+        _darknessEnabled = !_darknessEnabled;
+    }
+
+    public static void ToggleDarkness()
+    {
+        _instance._toggleDarkness();
     }
 }

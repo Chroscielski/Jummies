@@ -6,6 +6,7 @@ public class MechanicsMenuUI : MonoBehaviour
     public Dialog _dialog;
     public Toggle JumpToggle;
     public Toggle DarknessToggle;
+    public Toggle ArmageddonToggle;
 
     public void ToggleJump()
     {
@@ -37,5 +38,21 @@ public class MechanicsMenuUI : MonoBehaviour
     public void CancelToggleDarkness()
     {
         DarknessToggle.isOn = !DarknessToggle.isOn;
+    }
+
+    public void ToggleArmageddon()
+    {
+        _dialog.Display(string.Format("Armageddon will be " + (GameManager.ArmageddonEnabled ? "Disabled" : "Enabled" )), ConfirmToggleArmageddon, CancelToggleArmageddon);
+    }
+
+    public void ConfirmToggleArmageddon()
+    {
+        GameManager.ToggleArmageddon();
+        GameManager.StartRound();
+    }
+
+    public void CancelToggleArmageddon()
+    {
+        ArmageddonToggle.isOn = !ArmageddonToggle.isOn;
     }
 }

@@ -10,11 +10,11 @@ public class CameraPointerScript : MonoBehaviour
     {
         float maxDist = 0.0f;
 
-        foreach (var i in points)
+        foreach (var player in LevelManager.AlivePlayersEnumertor())
         {
-            foreach (var j in points)
+            foreach (var player2 in LevelManager.AlivePlayersEnumertor())
             {
-                maxDist = Mathf.Max(maxDist, Vector3.Distance(i.position, j.position));
+                maxDist = Mathf.Max(maxDist, Vector3.Distance(player.transform.position, player2.transform.position));
             }
         }
 
@@ -26,9 +26,11 @@ public class CameraPointerScript : MonoBehaviour
             Vector3 pos = new Vector3(0.0f, 0.0f, 0.0f);
             int i = 1;
 
-            foreach (var point in points)
+            foreach (var hero in LevelManager.AlivePlayersEnumertor())
             {
-                pos += point.position;
+                if (!LevelManager.IsPlayerAlive(i-1)) continue;
+                
+                pos += hero.transform.position;
                 i++;
             }
 

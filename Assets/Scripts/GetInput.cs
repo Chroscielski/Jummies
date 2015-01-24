@@ -36,7 +36,7 @@ public class GetInput : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            if (GameManager.IsActivePlayer(i))
+            if (LevelManager.IsPlayerAlive(i))
             {
                 GetPlayerInput(i);
             }

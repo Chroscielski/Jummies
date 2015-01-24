@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     private bool _jumpEnabled = true;
     private bool _armageddonEnabled = false;
 
-    private readonly bool[] _activePlayers = {true, true, false};
+    private readonly bool[] _activePlayers = {true, true, false, false};
 
     public static bool IsActivePlayer(int i)
     {

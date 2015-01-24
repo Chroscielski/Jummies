@@ -39,6 +39,10 @@ public class ControllerChoice : MonoBehaviour
             GameManager.SetControllerString(nextPlayer, "Joy 4");
             setPlayer(3);
         }
+
+        for(int i = 0; i < 4; i++)
+            if (Input.GetButtonDown("Joy " + (i+1).ToString() + " Button Start") && nextPlayer > 1)
+                Application.LoadLevel("Level01");
     }
 
     void togglePlayerBox(int playerNumber)
@@ -50,5 +54,6 @@ public class ControllerChoice : MonoBehaviour
     {
         GameManager.SetPlayerActive(playerNumber);
         togglePlayerBox(playerNumber);
+        nextPlayer++;
     }
 }

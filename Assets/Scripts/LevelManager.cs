@@ -61,17 +61,18 @@ public class LevelManager : MonoBehaviour
     public void _onPlayerDeath(int id)
     {
         _playersAlive[id] = false;
-        bool oneFound = false;
+        int oneFound = -1;
         for (int i = 0; i < 4; i++)
         {
-            if (_playersAlive[i] && oneFound)
+            if (_playersAlive[i] && oneFound >= 0)
             {
-                GameManager.WinGame(i);
+                return;
             }
-            else if (_playersAlive[i])
+            if (_playersAlive[i])
             {
-                oneFound = true;
+                oneFound = i;
             }
         }
+        GameManager.WinGame(oneFound);
     }
 }

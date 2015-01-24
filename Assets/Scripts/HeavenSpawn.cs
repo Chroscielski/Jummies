@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 
-public class Armageddon : MonoBehaviour
+public class HeavenSpawn : MonoBehaviour
 {
     public float MinX;
     public float MaxX;
     public float MinZ;
     public float MaxZ;
 
-    public float BombSpawnHeight;
+    public float spawnHeight;
 
     public float probability;
 
     private int _probability;
 
-    public GameObject BombPrefab;
+    public GameObject objectPrefab;
 
     void Awake()
     {
@@ -28,7 +28,7 @@ public class Armageddon : MonoBehaviour
             float x = Random.Range(MinX, MaxX);
             float z = Random.Range(MinZ, MaxZ);
 
-            Instantiate(BombPrefab, new Vector3(x, BombSpawnHeight, z), Quaternion.identity);
+            Instantiate(objectPrefab, new Vector3(x, spawnHeight, z), Quaternion.identity);
         }
     }
 }

@@ -11,13 +11,13 @@ public class CameraScript : MonoBehaviour
 
     public float GetCameraYRotation()
     {
-        return transform.rotation.y;
+        return transform.rotation.eulerAngles.y;
     }
 
     void Update()
     {
         transform.LookAt(cameraPointer.position, Vector3.up);
 
-        transform.position = Vector3.up*cameraPointerScript.GetDistance();
+        transform.position = Vector3.forward * -cameraPointerScript.GetDistance();
     }
 }

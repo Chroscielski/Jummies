@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
         return _instance._activePlayers[i];
     }
 
+    public static void SetPlayerActive(int i)
+    {
+        _instance._activePlayers[i] = true;
+    }
+
     public static bool JumpEnabled
     {
         get { return _instance._jumpEnabled; }

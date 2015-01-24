@@ -9,6 +9,11 @@ public class CameraScript : MonoBehaviour
     [SerializeField]
     private CameraPointerScript cameraPointerScript;
 
+    public float GetCameraYRotation()
+    {
+        return transform.rotation.y;
+    }
+
     void Update()
     {
         transform.LookAt(cameraPointer.position, Vector3.up);

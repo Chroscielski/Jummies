@@ -54,7 +54,605 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Bones|Attack01
+      takeName: Bones|Attack01
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bones
+        weight: 1
+      - path: Bones/Bone.005
+        weight: 1
+      - path: Bones/Bone.005/Bone
+        weight: 1
+      - path: Bones/Bone.005/Bone.001
+        weight: 1
+      - path: Bones/Bone.005/Bone.002
+        weight: 1
+      - path: Bones/Bone.005/Bone.003
+        weight: 1
+      - path: Bones/Bone.005/Bone.004
+        weight: 1
+      - path: Bones/Bone.005/Bone.004/Bone.006
+        weight: 1
+      - path: Dude01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Bones|Attack02
+      takeName: Bones|Attack02
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bones
+        weight: 1
+      - path: Bones/Bone.005
+        weight: 1
+      - path: Bones/Bone.005/Bone
+        weight: 1
+      - path: Bones/Bone.005/Bone.001
+        weight: 1
+      - path: Bones/Bone.005/Bone.002
+        weight: 1
+      - path: Bones/Bone.005/Bone.003
+        weight: 1
+      - path: Bones/Bone.005/Bone.004
+        weight: 1
+      - path: Bones/Bone.005/Bone.004/Bone.006
+        weight: 1
+      - path: Dude01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Bones|Death
+      takeName: Bones|Death
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bones
+        weight: 1
+      - path: Bones/Bone.005
+        weight: 1
+      - path: Bones/Bone.005/Bone
+        weight: 1
+      - path: Bones/Bone.005/Bone.001
+        weight: 1
+      - path: Bones/Bone.005/Bone.002
+        weight: 1
+      - path: Bones/Bone.005/Bone.003
+        weight: 1
+      - path: Bones/Bone.005/Bone.004
+        weight: 1
+      - path: Bones/Bone.005/Bone.004/Bone.006
+        weight: 1
+      - path: Dude01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Bones|Fly
+      takeName: Bones|Fly
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bones
+        weight: 1
+      - path: Bones/Bone.005
+        weight: 1
+      - path: Bones/Bone.005/Bone
+        weight: 1
+      - path: Bones/Bone.005/Bone.001
+        weight: 1
+      - path: Bones/Bone.005/Bone.002
+        weight: 1
+      - path: Bones/Bone.005/Bone.003
+        weight: 1
+      - path: Bones/Bone.005/Bone.004
+        weight: 1
+      - path: Bones/Bone.005/Bone.004/Bone.006
+        weight: 1
+      - path: Dude01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Bones|Idle01
+      takeName: Bones|Idle01
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bones
+        weight: 1
+      - path: Bones/Bone.005
+        weight: 1
+      - path: Bones/Bone.005/Bone
+        weight: 1
+      - path: Bones/Bone.005/Bone.001
+        weight: 1
+      - path: Bones/Bone.005/Bone.002
+        weight: 1
+      - path: Bones/Bone.005/Bone.003
+        weight: 1
+      - path: Bones/Bone.005/Bone.004
+        weight: 1
+      - path: Bones/Bone.005/Bone.004/Bone.006
+        weight: 1
+      - path: Dude01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Bones|Jump
+      takeName: Bones|Jump
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bones
+        weight: 1
+      - path: Bones/Bone.005
+        weight: 1
+      - path: Bones/Bone.005/Bone
+        weight: 1
+      - path: Bones/Bone.005/Bone.001
+        weight: 1
+      - path: Bones/Bone.005/Bone.002
+        weight: 1
+      - path: Bones/Bone.005/Bone.003
+        weight: 1
+      - path: Bones/Bone.005/Bone.004
+        weight: 1
+      - path: Bones/Bone.005/Bone.004/Bone.006
+        weight: 1
+      - path: Dude01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Bones|Landing
+      takeName: Bones|Landing
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bones
+        weight: 1
+      - path: Bones/Bone.005
+        weight: 1
+      - path: Bones/Bone.005/Bone
+        weight: 1
+      - path: Bones/Bone.005/Bone.001
+        weight: 1
+      - path: Bones/Bone.005/Bone.002
+        weight: 1
+      - path: Bones/Bone.005/Bone.003
+        weight: 1
+      - path: Bones/Bone.005/Bone.004
+        weight: 1
+      - path: Bones/Bone.005/Bone.004/Bone.006
+        weight: 1
+      - path: Dude01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Bones|Strife
+      takeName: Bones|Strife
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bones
+        weight: 1
+      - path: Bones/Bone.005
+        weight: 1
+      - path: Bones/Bone.005/Bone
+        weight: 1
+      - path: Bones/Bone.005/Bone.001
+        weight: 1
+      - path: Bones/Bone.005/Bone.002
+        weight: 1
+      - path: Bones/Bone.005/Bone.003
+        weight: 1
+      - path: Bones/Bone.005/Bone.004
+        weight: 1
+      - path: Bones/Bone.005/Bone.004/Bone.006
+        weight: 1
+      - path: Dude01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Bones|Walkcycle
+      takeName: Bones|Walkcycle
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bones
+        weight: 1
+      - path: Bones/Bone.005
+        weight: 1
+      - path: Bones/Bone.005/Bone
+        weight: 1
+      - path: Bones/Bone.005/Bone.001
+        weight: 1
+      - path: Bones/Bone.005/Bone.002
+        weight: 1
+      - path: Bones/Bone.005/Bone.003
+        weight: 1
+      - path: Bones/Bone.005/Bone.004
+        weight: 1
+      - path: Bones/Bone.005/Bone.004/Bone.006
+        weight: 1
+      - path: Dude01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Bones|Winner
+      takeName: Bones|Winner
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bones
+        weight: 1
+      - path: Bones/Bone.005
+        weight: 1
+      - path: Bones/Bone.005/Bone
+        weight: 1
+      - path: Bones/Bone.005/Bone.001
+        weight: 1
+      - path: Bones/Bone.005/Bone.002
+        weight: 1
+      - path: Bones/Bone.005/Bone.003
+        weight: 1
+      - path: Bones/Bone.005/Bone.004
+        weight: 1
+      - path: Bones/Bone.005/Bone.004/Bone.006
+        weight: 1
+      - path: Dude01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Bones|Zamiatanie1
+      takeName: Bones|Zamiatanie1
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bones
+        weight: 1
+      - path: Bones/Bone.005
+        weight: 1
+      - path: Bones/Bone.005/Bone
+        weight: 1
+      - path: Bones/Bone.005/Bone.001
+        weight: 1
+      - path: Bones/Bone.005/Bone.002
+        weight: 1
+      - path: Bones/Bone.005/Bone.003
+        weight: 1
+      - path: Bones/Bone.005/Bone.004
+        weight: 1
+      - path: Bones/Bone.005/Bone.004/Bone.006
+        weight: 1
+      - path: Dude01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Bones|Zamiatanie2
+      takeName: Bones|Zamiatanie2
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bones
+        weight: 1
+      - path: Bones/Bone.005
+        weight: 1
+      - path: Bones/Bone.005/Bone
+        weight: 1
+      - path: Bones/Bone.005/Bone.001
+        weight: 1
+      - path: Bones/Bone.005/Bone.002
+        weight: 1
+      - path: Bones/Bone.005/Bone.003
+        weight: 1
+      - path: Bones/Bone.005/Bone.004
+        weight: 1
+      - path: Bones/Bone.005/Bone.004/Bone.006
+        weight: 1
+      - path: Dude01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Dude01|Zamiatanie1
+      takeName: Dude01|Zamiatanie1
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bones
+        weight: 1
+      - path: Bones/Bone.005
+        weight: 1
+      - path: Bones/Bone.005/Bone
+        weight: 1
+      - path: Bones/Bone.005/Bone.001
+        weight: 1
+      - path: Bones/Bone.005/Bone.002
+        weight: 1
+      - path: Bones/Bone.005/Bone.003
+        weight: 1
+      - path: Bones/Bone.005/Bone.004
+        weight: 1
+      - path: Bones/Bone.005/Bone.004/Bone.006
+        weight: 1
+      - path: Dude01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

@@ -9,15 +9,23 @@ public class Armageddon : MonoBehaviour
 
     public float BombSpawnHeight;
 
-    public int probability;
+    public float probability;
+
+    private int _probability;
 
     public GameObject BombPrefab;
+
+    void Awake()
+    {
+        _probability = (int)(int.MaxValue * probability);
+    }
 
     void Update()
     {
         var rng = new System.Random();
-        if (rng.Next() < probability)
+        if (rng.Next() < _probability)
         {
+            Debug.Log("Spawning bomb");
             float x = Random.Range(MinX, MaxX);
             float z = Random.Range(MinZ, MaxZ);
 

@@ -15,6 +15,8 @@ public class HeroController : MonoBehaviour
     public Animator AnimatorController;
     public float ControllLossAfterHit = 2.0f;
 
+    public int PlayerId;
+
     private float controllModifier = 1.0f;
 
     public void Rotate(float xAxis, float yAxis)
@@ -61,6 +63,11 @@ public class HeroController : MonoBehaviour
     {
         canJump = true;
         AnimatorController.SetBool("Jumping", false);
+    }
+
+    public void OnDeath()
+    {
+        LevelManager.OnPlayerDeath(PlayerId);
     }
 
     public void TakeHit(Vector3 fromVector3)

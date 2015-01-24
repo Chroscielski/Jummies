@@ -28,13 +28,13 @@ public class GetInput : MonoBehaviour
         //GameManager.ToggleJump();
 
         if (GameManager.IsActivePlayer(0))
-            heroes[0] = GameObject.Find("P1").GetComponent<HeroController>();
+            heroes[0] = GameObject.Find("Player1").GetComponent<HeroController>();
         if (GameManager.IsActivePlayer(1)) 
-            heroes[1] = GameObject.Find("P2").GetComponent<HeroController>();
+            heroes[1] = GameObject.Find("Player2").GetComponent<HeroController>();
         if (GameManager.IsActivePlayer(2)) 
-            heroes[2] = GameObject.Find("P3").GetComponent<HeroController>();
+            heroes[2] = GameObject.Find("Player3").GetComponent<HeroController>();
         if (GameManager.IsActivePlayer(3))
-            heroes[3] = GameObject.Find("P4").GetComponent<HeroController>();
+            heroes[3] = GameObject.Find("Player4").GetComponent<HeroController>();
     }
 
 

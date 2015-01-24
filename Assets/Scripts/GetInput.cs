@@ -7,12 +7,6 @@ public class GetInput : MonoBehaviour
 
     public HeroController[] heroes;
 
-    /* 
-     * Z nieznanych mi przyczyn Windows wykrywa kontroler 1 jako 2 a kontroler 2 jako 1
-     * W Inpucie jest dlatego ustawione odwrotnie
-     * Jeśli są jakieś problemy z numerem kontrolera szukać rozwiązania tam.
-     */
-
     public void SetActivePlayer(int id, HeroController hero)
     {
         heroes[id] = hero;

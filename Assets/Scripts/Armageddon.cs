@@ -25,7 +25,6 @@ public class Armageddon : MonoBehaviour
         var rng = new System.Random();
         if (rng.Next() < _probability)
         {
-            Debug.Log("Spawning bomb");
             float x = Random.Range(MinX, MaxX);
             float z = Random.Range(MinZ, MaxZ);
 

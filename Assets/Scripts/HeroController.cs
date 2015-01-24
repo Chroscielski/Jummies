@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 public class HeroController : MonoBehaviour
 {
-    [SerializeField] private float jumpForce = 300.0f;
+    [SerializeField] private float jumpForce = 100.0f;
     [SerializeField] private float movementSpeed = 10.0f;
 
     [SerializeField]

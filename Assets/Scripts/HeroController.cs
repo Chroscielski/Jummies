@@ -68,6 +68,7 @@ public class HeroController : MonoBehaviour
     public void OnDeath()
     {
         LevelManager.OnPlayerDeath(PlayerId);
+        Destroy(gameObject);
     }
 
     public void TakeHit(Vector3 fromVector3)

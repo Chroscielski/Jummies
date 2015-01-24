@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 52e795ae44c78bf458ea052e7a868924
+guid: 53c3ea5aa606c4943a7187652b52025b
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -7,8 +7,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cylinder.003
-    6400000: //RootNode
+    4300000: Cylinder.007
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -47,7 +46,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []

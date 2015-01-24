@@ -9,7 +9,6 @@ public class ControllerChoice : MonoBehaviour
     
     public void Start()
     {
-
     }
 
     void Update()

@@ -66,6 +66,7 @@ public class HeroController : MonoBehaviour
     public void TakeHit(Vector3 fromVector3)
     {
         fromVector3 = new Vector3(fromVector3.x,0.0f,fromVector3.z);
+        controllModifier = 0;
         Vector3 myTmpVector3 = new Vector3(transform.position.x, 0, transform.position.z);
         rigidbody.AddForce((myTmpVector3 - fromVector3)*300.0f);
         rigidbody.AddForce(Vector3.up * 250.0f);

@@ -13,10 +13,18 @@ public class HeroController : MonoBehaviour
     public bool canJump = true;
 
     public Animator AnimatorController;
+    public float ControllLossAfterHit = 2.0f;
+
+    private float controllModifier = 1.0f;
 
     public void Rotate(float xAxis, float yAxis)
     {
         transform.rotation = Quaternion.LookRotation(new Vector3(xAxis, 0, yAxis), Vector3.up);
+    }
+
+    void Update()
+    {
+        controllModifier = Mathf.MoveTowards(controllModifier, 1.0f, Time.deltaTime/ControllLossAfterHit);
     }
 
     public void Move(float xAxis, float yAxis)
@@ -24,7 +32,9 @@ public class HeroController : MonoBehaviour
         Vector3 direction = new Vector3(xAxis, 0, yAxis);
         Vector3 desiredVelocity = direction*movementSpeed;
         desiredVelocity.y = rigidbody.velocity.y;
-        rigidbody.velocity = desiredVelocity;
+        Vector3 currentVelocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
+        Vector3 setVelocity = Vector3.Lerp(currentVelocity, desiredVelocity, controllModifier);
+        rigidbody.velocity = setVelocity;
         AnimatorController.SetFloat("SpeedForward", Vector3.Dot(direction, transform.forward));
         AnimatorController.SetFloat("SpeedStrafe", Vector3.Dot(direction, transform.right));
     }
@@ -57,7 +67,7 @@ public class HeroController : MonoBehaviour
     {
         fromVector3 = new Vector3(fromVector3.x,0.0f,fromVector3.z);
         Vector3 myTmpVector3 = new Vector3(transform.position.x, 0, transform.position.z);
-        rigidbody.AddForce((myTmpVector3 - fromVector3)*100.0f);
-        rigidbody.AddForce(Vector3.up * 150.0f);
+        rigidbody.AddForce((myTmpVector3 - fromVector3)*300.0f);
+        rigidbody.AddForce(Vector3.up * 250.0f);
     }
 }

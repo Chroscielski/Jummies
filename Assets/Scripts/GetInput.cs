@@ -20,7 +20,7 @@ public class GetInput : MonoBehaviour
     void GetPlayerInput(int playerNumber)
     {
         var controllerString = GameManager.GetControllerString(playerNumber);
-        
+
         if (Input.GetButtonDown(controllerString + "Left Bump") && GameManager.JumpEnabled)
         {
             LevelManager.GetPlayer(playerNumber).Jump();
@@ -52,4 +52,3 @@ public class GetInput : MonoBehaviour
             LevelManager.GetPlayer(playerNumber).Rotate(axis_3, -axis_4);
     }
 }
-

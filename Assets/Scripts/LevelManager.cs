@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,11 +11,18 @@ public class LevelManager : MonoBehaviour
 
     public HeroController[] players;
 
+    public Transform[] spawns;
+
     public int PlayersNumber;
 
     public static HeroController GetPlayer(int i)
     {
-         return _instance.players[i];
+        return _instance.players[i];
+    }
+
+    public static Transform GetSpawn(int i)
+    {
+        return _instance.spawns[i];
     }
 
     public static void AddPlayer(HeroController hero)

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ControllerChoice : MonoBehaviour
@@ -6,7 +7,7 @@ public class ControllerChoice : MonoBehaviour
     private int nextPlayer = 0;
 
     public Text[] playerTexts;
-    
+
     public void Start()
     {
     }
@@ -30,7 +31,7 @@ public class ControllerChoice : MonoBehaviour
         }
         if (Input.GetButtonDown("Joy 3 Button A"))
         {
-            GameManager.SetControllerString(nextPlayer, "Joy 3 "); 
+            GameManager.SetControllerString(nextPlayer, "Joy 3 ");
             setPlayer(2);
         }
         if (Input.GetButtonDown("Joy 4 Button A"))
@@ -39,9 +40,9 @@ public class ControllerChoice : MonoBehaviour
             setPlayer(3);
         }
 
-        for(int i = 0; i < 4; i++)
-            if (Input.GetButtonDown("Joy " + (i+1).ToString() + " Button Start") && nextPlayer > 1)
-                Application.LoadLevel("Level01");
+        for (int i = 0; i < 4; i++)
+            if (Input.GetButtonDown("Joy " + (i + 1).ToString() + " Button Start") && nextPlayer > 1)
+                Application.LoadLevel("TestScene_MP");
     }
 
     void togglePlayerBox(int playerNumber)

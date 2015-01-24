@@ -38,6 +38,6 @@ public class CameraPointerScript : MonoBehaviour
             }
         }
 
-        transform.position = new Vector3(minVector3.x + maxDist/2, minVector3.y, minVector3.z);
+        transform.position = new Vector3(minVector3.x + maxDist / 2, minVector3.y, minVector3.z);
     }
 }

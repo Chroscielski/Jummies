@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class GameManager : MonoBehaviour
     private bool _armageddonEnabled = false;
 
     //TODO: set to all false
-    private bool[] _activePlayers = {true, true, true, true};
+    private bool[] _activePlayers = { false, false, false, false };
 
     public string[] controllerStrings;
 

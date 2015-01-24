@@ -7,12 +7,7 @@ public class LevelInitializer : MonoBehaviour
 
     public GameObject ArmageddonPrefab;
 
-    public GameObject[] PlayersPrefabs;
-
-    void Awake()
-    {
-        //Player
-    }
+    public GameObject[] PlayersPrefabs = new GameObject[4];
 
     void Start()
     {
@@ -29,10 +24,13 @@ public class LevelInitializer : MonoBehaviour
             Instantiate(ArmageddonPrefab);
         }
 
-        for(int i = 0; i < 4;i++)
-            if (GameManager.IsActivePlayer(0))
+        for (int i = 0; i < 4; i++)
+        {
+            if (GameManager.IsActivePlayer(i))
             {
-                //Instantiate(PlayersPrefabs[0], Vector3.zero);
+                GameObject newPlayer = (GameObject)Instantiate(PlayersPrefabs[i], LevelManager.GetSpawn(i).position, Quaternion.identity);
+                LevelManager.AddPlayer(newPlayer.GetComponent<HeroController>());
             }
+        }
     }
 }

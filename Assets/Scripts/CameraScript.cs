@@ -14,6 +14,6 @@ public class CameraScript : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(cameraPointer.transform.position.x, yPossitionOffset, -cameraPointerScript.GetDistance() *0.5f - 25.0f);
+        transform.position = new Vector3(cameraPointer.transform.position.x, yPossitionOffset, -cameraPointerScript.GetDistance() * 0.5f - 25.0f);
     }
 }

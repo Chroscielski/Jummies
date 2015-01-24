@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9406e169e06fbab4db0f5a9966111eaa
+guid: 1abc41d6d55c4594c89342c1926d5395
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -26,14 +26,15 @@ ModelImporter:
     4300000: Dude01
     7400000: Bones|Attack01
     7400002: Bones|Attack02
-    7400004: Bones|Death
-    7400006: Bones|Fly
-    7400008: Bones|Idle01
-    7400010: Bones|Jump
-    7400012: Bones|Landing
-    7400014: Bones|Walkcycle
-    7400016: Bones|Winner
-    7400018: Dude01|Attack01
+    7400004: Bones|Attack03
+    7400006: Bones|Death
+    7400008: Bones|Fly
+    7400010: Bones|Idle01
+    7400012: Bones|Jump
+    7400014: Bones|Landing
+    7400016: Bones|Walkcycle
+    7400018: Bones|Winner
+    7400020: Dude01|Attack01
     9500000: //RootNode
     13700000: Dude01
   materials:

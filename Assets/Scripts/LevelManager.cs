@@ -10,9 +10,17 @@ public class LevelManager : MonoBehaviour
 
     public HeroController[] players;
 
+    public int PlayersNumber;
+
     public static HeroController GetPlayer(int i)
     {
          return _instance.players[i];
+    }
+
+    public static void AddPlayer(HeroController hero)
+    {
+        _instance.players[_instance.PlayersNumber] = hero;
+        _instance.PlayersNumber++;
     }
 
     void Awake()
@@ -31,10 +39,12 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         _playersAlive = new bool[4];
+        players = new HeroController[4];
         for (int i = 0; i < 4; i++)
         {
             _playersAlive[i] = GameManager.IsActivePlayer(i);
         }
+        PlayersNumber = 0;
     }
 
     public static IEnumerable<HeroController> AlivePlayersEnumertor()

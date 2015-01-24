@@ -20,23 +20,22 @@ public class ControllerChoice : MonoBehaviour
     {
         if (Input.GetButtonDown("Joy 1 Button A"))
         {
-            GameManager.SetControllerString(nextPlayer, "Joy 1");
+            GameManager.SetControllerString(nextPlayer, "Joy 1 ");
             setPlayer(0);
-
         }
         if (Input.GetButtonDown("Joy 2 Button A"))
         {
-            GameManager.SetControllerString(nextPlayer, "Joy 2");
+            GameManager.SetControllerString(nextPlayer, "Joy 2 ");
             setPlayer(1);
         }
         if (Input.GetButtonDown("Joy 3 Button A"))
         {
-            GameManager.SetControllerString(nextPlayer, "Joy 3"); 
+            GameManager.SetControllerString(nextPlayer, "Joy 3 "); 
             setPlayer(2);
         }
         if (Input.GetButtonDown("Joy 4 Button A"))
         {
-            GameManager.SetControllerString(nextPlayer, "Joy 4");
+            GameManager.SetControllerString(nextPlayer, "Joy 4 ");
             setPlayer(3);
         }
 

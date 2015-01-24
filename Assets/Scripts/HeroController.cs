@@ -37,12 +37,14 @@ public class HeroController : MonoBehaviour
         {
             canJump = false;
             rigidbody.AddForce(Vector3.up*jumpForce);
+            AnimatorController.SetBool("Jumping", true);
         }
     }
 
     public void OnLanded()
     {
         canJump = true;
+        AnimatorController.SetBool("Jumping", false);
     }
 
     public void TakeHit(Vector3 fromVector3)

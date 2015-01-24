@@ -1,10 +1,19 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
     private bool[] _playersAlive;
 
     private static LevelManager _instance;
+
+    public HeroController[] players;
+
+    public static HeroController GetPlayer(int i)
+    {
+        return _instance.players[i];
+    }
 
     void Awake()
     {
@@ -25,6 +34,17 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             _playersAlive[i] = GameManager.IsActivePlayer(i);
+        }
+    }
+
+    public static IEnumerable<HeroController> AlivePlayersEnumertor()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if (_instance._playersAlive[i])
+            {
+                yield return GetPlayer(i);
+            }
         }
     }
 

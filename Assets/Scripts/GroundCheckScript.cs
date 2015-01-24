@@ -3,12 +3,12 @@ using System.Collections;
 
 public class GroundCheckScript : MonoBehaviour
 {
-    [SerializeField] private HeroController heroController;
+    [SerializeField]
+    private HeroController heroController;
 
     void OnTriggerEnter(Collider collider)
     {
-        if(collider.tag == "Ground")
-            heroController.OnLanded();
+        heroController.OnLanded();
         if (collider.tag == "DeathZone")
         {
             heroController.OnDeath();

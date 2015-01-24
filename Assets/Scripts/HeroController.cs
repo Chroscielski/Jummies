@@ -14,9 +14,6 @@ public class HeroController : MonoBehaviour
     [Tooltip("DO NOT CHANGE. Russians Invasion Button")]
     public bool canJump = true;
 
-    [SerializeField]
-    private CharacterController characterController;
-
     public Animator AnimatorController;
     public float ControllLossAfterHit = 2.0f;
 
@@ -38,7 +35,6 @@ public class HeroController : MonoBehaviour
     {
         Vector3 direction = new Vector3(xAxis, 0, yAxis);
         Vector3 desiredVelocity = direction * movementSpeed;
-        //rigidbody.collider.material.frictionCombine = PhysicMaterialCombine.Average;
         desiredVelocity.y = rigidbody.velocity.y;
         Vector3 currentVelocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
         Vector3 setVelocity = Vector3.Lerp(currentVelocity, desiredVelocity, controllModifier);
@@ -52,7 +48,6 @@ public class HeroController : MonoBehaviour
     {
         if (!canJump) return;
         canJump = false;
-        //characterController.Move(new Vector3(0, 100.0f, 0));
         rigidbody.AddForce(Vector3.up * jumpForce);
         AnimatorController.SetBool("Jumping", true);
     }

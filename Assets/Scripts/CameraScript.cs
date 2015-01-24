@@ -9,6 +9,9 @@ public class CameraScript : MonoBehaviour
     [SerializeField]
     private CameraPointerScript cameraPointerScript;
 
+    [SerializeField]
+    private float yPossitionOffset;
+
     public float GetCameraYRotation()
     {
         return transform.rotation.eulerAngles.y;
@@ -19,5 +22,6 @@ public class CameraScript : MonoBehaviour
         transform.LookAt(cameraPointer.position, Vector3.up);
 
         transform.position = Vector3.forward * -cameraPointerScript.GetDistance();
+        transform.position += Vector3.up*yPossitionOffset;
     }
 }

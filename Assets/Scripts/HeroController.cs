@@ -14,6 +14,8 @@ public class HeroController : MonoBehaviour
     [Tooltip("DO NOT CHANGE. Russians Invasion Button")]
     public bool canJump = true;
 
+    public Animator AnimatorController;
+
     public void Rotate(float xAxis, float yAxis)
     {
         transform.rotation = Quaternion.LookRotation(new Vector3(xAxis, 0, yAxis), Vector3.up);
@@ -21,7 +23,12 @@ public class HeroController : MonoBehaviour
 
     public void Move(float xAxis, float yAxis)
     {
-        rigidbody.velocity = new Vector3(xAxis * movementSpeed * Time.deltaTime, rigidbody.velocity.y, yAxis * movementSpeed * Time.deltaTime);
+        Vector3 direction = new Vector3(xAxis, 0, yAxis);
+        Vector3 desiredVelocity = direction*movementSpeed;
+        desiredVelocity.y = rigidbody.velocity.y;
+        rigidbody.velocity = desiredVelocity;
+        AnimatorController.SetFloat("SpeedForward", Vector3.Dot(direction, transform.forward));
+        AnimatorController.SetFloat("SpeedStrafe", Vector3.Dot(direction, transform.right));
     }
 
     public void Jump()

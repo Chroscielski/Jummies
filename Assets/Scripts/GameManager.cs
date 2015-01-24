@@ -9,6 +9,18 @@ public class GameManager : MonoBehaviour
 
     private readonly bool[] _activePlayers = {true, true, false, false};
 
+    public string[] controllerStrings;
+
+    public static void SetControllerString(int playerId, string controller)
+    {
+        _instance.controllerStrings[playerId] = controller;
+    }
+
+    public static string GetControllerString(int playerId)
+    {
+        return _instance.controllerStrings[playerId];
+    }
+
     public static bool IsActivePlayer(int i)
     {
         return _instance._activePlayers[i];
@@ -39,6 +51,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        controllerStrings = new string[4];
     }
 
     public void _startRound()

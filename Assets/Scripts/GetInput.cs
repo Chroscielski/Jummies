@@ -1,7 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using System.Collections.Generic;
-using System.Reflection.Emit;
 
 public class GetInput : MonoBehaviour
 {
@@ -15,12 +13,9 @@ public class GetInput : MonoBehaviour
      * Jeśli są jakieś problemy z numerem kontrolera szukać rozwiązania tam.
      */
 
-    private enum PlayerNumber
+    public void SetActivePlayer(int id, HeroController hero)
     {
-        Player1 = 1,
-        Player2,
-        Player3,
-        Player4
+        heroes[id] = hero;
     }
 
     void Awake()
@@ -32,49 +27,53 @@ public class GetInput : MonoBehaviour
     {
         //GameManager.ToggleJump();
 
-        if (GameManager.IsActivePlayer((int)PlayerNumber.Player1 - 1))
+        if (GameManager.IsActivePlayer(0))
             heroes[0] = GameObject.Find("P1").GetComponent<HeroController>();
-        if (GameManager.IsActivePlayer((int)PlayerNumber.Player2 - 1)) 
+        if (GameManager.IsActivePlayer(1)) 
             heroes[1] = GameObject.Find("P2").GetComponent<HeroController>();
-        if (GameManager.IsActivePlayer((int)PlayerNumber.Player3 - 1)) 
+        if (GameManager.IsActivePlayer(2)) 
             heroes[2] = GameObject.Find("P3").GetComponent<HeroController>();
-        if (GameManager.IsActivePlayer((int)PlayerNumber.Player4 - 1))
+        if (GameManager.IsActivePlayer(3))
             heroes[3] = GameObject.Find("P4").GetComponent<HeroController>();
     }
 
 
     private void Update()
     {
-        if (GameManager.IsActivePlayer((int)PlayerNumber.Player1 - 1)) 
-            GetPlayerInput(PlayerNumber.Player1);
-        if (GameManager.IsActivePlayer((int)PlayerNumber.Player2 - 1)) 
-            GetPlayerInput(PlayerNumber.Player2);
-        if (GameManager.IsActivePlayer((int)PlayerNumber.Player3 - 1)) 
-            GetPlayerInput(PlayerNumber.Player3);
-        if (GameManager.IsActivePlayer((int)PlayerNumber.Player4 - 1)) 
-            GetPlayerInput(PlayerNumber.Player4);
+        for (int i = 0; i < 4; i++)
+        {
+            if (GameManager.IsActivePlayer(i))
+            {
+                GetPlayerInput(i);
+            }
+        }
     }
 
-    void GetPlayerInput(PlayerNumber playerNumber)
+    void GetPlayerInput(int playerNumber)
     {
-        if (Input.GetAxis(String.Format("Joy {0} Trigger Left", (int)playerNumber)) == 1.0f && GameManager.JumpEnabled)
+        var controllerString = GameManager.GetControllerString(playerNumber);
+
+        Debug.Log(Input.GetAxis(controllerString + "Trigger Left"));
+
+        if (Input.GetAxis(controllerString + "Trigger Left") == 1.0f && GameManager.JumpEnabled)
         {
-            heroes[(int)playerNumber - 1].Jump();
-            Debug.Log(String.Format("{0} Skacze", (int)playerNumber));
+            heroes[playerNumber].Jump();
+            Debug.Log(String.Format("{0} Skacze", playerNumber));
         }
         if (Input.GetAxis("Joy 1 Trigger Right") == 1.0f)
         {
             //Attack
-            Debug.Log(String.Format("{0} Atakuje", (int)playerNumber));
+            Debug.Log(String.Format("{0} Atakuje", playerNumber));
         }
-        float axis_X = Input.GetAxis(String.Format("Joy {0} Axis X", (int)playerNumber));
-        float axis_Y = Input.GetAxis(String.Format("Joy {0} Axis Y", (int)playerNumber));
-        float axis_3 = Input.GetAxis(String.Format("Joy {0} Axis 3", (int)playerNumber));
-        float axis_4 = Input.GetAxis(String.Format("Joy {0} Axis 4", (int)playerNumber));
 
-        heroes[(int)playerNumber - 1].Move(axis_X, -axis_Y);
-        if (axis_3 != 0.0f && axis_4 != 0.0f)
-            heroes[(int)playerNumber - 1].Rotate(axis_3, -axis_4);
+        float axis_X = Input.GetAxis(controllerString + "Axis X");
+        float axis_Y = Input.GetAxis(controllerString + "Axis Y");
+        float axis_3 = Input.GetAxis(controllerString + "Axis 3");
+        float axis_4 = Input.GetAxis(controllerString + "Axis 4");
+
+        heroes[playerNumber].Move(axis_X, -axis_Y);
+        if (axis_3 != 0.0f || axis_4 != 0.0f)
+            heroes[playerNumber].Rotate(axis_3, -axis_4);
     }
 }
 

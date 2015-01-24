@@ -12,8 +12,8 @@ public class ControllerChoice : MonoBehaviour
         GameManager.SetControllerString(3, "Joy 3 ");
     }
 
-    void getInput()
+    void getInput(int playerNumber)
     {
-        
+        string controllerString = GameManager.GetControllerString(playerNumber);
     }
 }

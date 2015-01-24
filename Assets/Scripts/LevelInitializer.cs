@@ -7,6 +7,13 @@ public class LevelInitializer : MonoBehaviour
 
     public GameObject ArmageddonPrefab;
 
+    public GameObject[] PlayersPrefabs;
+
+    void Awake()
+    {
+        //Player
+    }
+
     void Start()
     {
         if (GameManager.DarknessEnabled)
@@ -21,5 +28,11 @@ public class LevelInitializer : MonoBehaviour
         {
             Instantiate(ArmageddonPrefab);
         }
+
+        for(int i = 0; i < 4;i++)
+            if (GameManager.IsActivePlayer(0))
+            {
+                //Instantiate(PlayersPrefabs[0], Vector3.zero);
+            }
     }
 }

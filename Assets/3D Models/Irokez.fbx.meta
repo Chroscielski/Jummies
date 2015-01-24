@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 489932b220282a542a358ad881f37587
+guid: 2672ddb2e3d87af478a7e4960f46e99d
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -7,7 +7,28 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Sphere
+    4300000: Cone.003
+    7400000: Cone.003|Cube.003Action
+    7400002: Cone.003|CubeAction.001
+    7400004: Cone.003|CubeAction.006
+    7400006: Cone.003|CubeAction.007
+    7400008: Cone.003|Cylinder.002Action.001
+    7400010: Cone.003|Cylinder.002Action.002
+    7400012: Cone.003|Cylinder.005Action
+    7400014: Cone.003|Cylinder.006Action
+    7400016: Cone.003|CylinderAction
+    7400018: Cone.003|CylinderAction.002
+    7400020: Cone.003|CylinderAction.006
+    7400022: Cone.003|Plane.001Action
+    7400024: Cone.003|Plane.001Action.001
+    7400026: Cone.003|Plane.001Action.002
+    7400028: Cone.003|Plane.001Action.003
+    7400030: Cone.003|Plane.001Action.004
+    7400032: Cone.003|Plane.001Action.005
+    7400034: Cone.003|Plane.001Action.006
+    7400036: Cone.003|Plane.001Action.007
+    7400038: Cone.003|Plane.001Action.009
+    7400040: Cone.003|PlaneAction
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -44,7 +65,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0

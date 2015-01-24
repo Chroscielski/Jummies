@@ -36,6 +36,7 @@ public class HeroController : MonoBehaviour
         desiredVelocity.y = rigidbody.velocity.y;
         Vector3 currentVelocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
         Vector3 setVelocity = Vector3.Lerp(currentVelocity, desiredVelocity, controllModifier);
+        setVelocity.y = rigidbody.velocity.y;        
         rigidbody.velocity = setVelocity;
         AnimatorController.SetFloat("SpeedForward", Vector3.Dot(direction, transform.forward));
         AnimatorController.SetFloat("SpeedStrafe", Vector3.Dot(direction, transform.right));

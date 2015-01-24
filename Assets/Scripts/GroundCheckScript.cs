@@ -8,6 +8,6 @@ public class GroundCheckScript : MonoBehaviour
     void OnTriggerEnter(Collider collider)
     {
         if(collider.tag == "Ground")
-            heroController.canJump = true;
+            heroController.OnLanded();
     }
 }

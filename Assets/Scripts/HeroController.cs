@@ -33,6 +33,11 @@ public class HeroController : MonoBehaviour
         }
     }
 
+    public void OnLanded()
+    {
+        canJump = true;
+    }
+
     public void TakeHit(Vector3 fromVector3)
     {
         fromVector3 = new Vector3(fromVector3.x,0.0f,fromVector3.z);

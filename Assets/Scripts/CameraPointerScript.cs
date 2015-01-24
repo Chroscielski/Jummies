@@ -21,19 +21,23 @@ public class CameraPointerScript : MonoBehaviour
         return maxDist;
     }
 
-    void Update ()
+    void Update()
+    {
+        float maxDist = 0.0f;
+        Vector3 minVector3 = new Vector3();
+        foreach (var player in LevelManager.AlivePlayersEnumertor())
         {
-            Vector3 pos = new Vector3(0.0f, 0.0f, 0.0f);
-            int i = 1;
-
-            foreach (var hero in LevelManager.AlivePlayersEnumertor())
+            foreach (var player2 in LevelManager.AlivePlayersEnumertor())
             {
-                if (!LevelManager.IsPlayerAlive(i-1)) continue;
-                
-                pos += hero.transform.position;
-                i++;
+                float tmp = Vector3.Distance(player.transform.position, player2.transform.position);
+                if (maxDist < tmp)
+                {
+                    maxDist = tmp;
+                    minVector3 = Vector3.Min(player.transform.position, player2.transform.position);
+                }
             }
-
-            transform.position = pos/i;
         }
+
+        transform.position = new Vector3(minVector3.x + maxDist/2, minVector3.y, minVector3.z);
     }
+}

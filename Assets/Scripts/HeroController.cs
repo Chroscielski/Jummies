@@ -5,12 +5,17 @@ using System.ComponentModel;
 
 public class HeroController : MonoBehaviour
 {
-    [SerializeField] private float jumpForce = 100.0f;
-    [SerializeField] private float movementSpeed = 10.0f;
+    [SerializeField]
+    private float jumpForce = 100.0f;
+    [SerializeField]
+    private float movementSpeed = 10.0f;
 
     [SerializeField]
     [Tooltip("DO NOT CHANGE. Russians Invasion Button")]
     public bool canJump = true;
+
+    [SerializeField]
+    private CharacterController characterController;
 
     public Animator AnimatorController;
     public float ControllLossAfterHit = 2.0f;
@@ -26,17 +31,18 @@ public class HeroController : MonoBehaviour
 
     void Update()
     {
-        controllModifier = Mathf.MoveTowards(controllModifier, 1.0f, Time.deltaTime/ControllLossAfterHit);
+        controllModifier = Mathf.MoveTowards(controllModifier, 1.0f, Time.deltaTime / ControllLossAfterHit);
     }
 
     public void Move(float xAxis, float yAxis)
     {
         Vector3 direction = new Vector3(xAxis, 0, yAxis);
-        Vector3 desiredVelocity = direction*movementSpeed;
+        Vector3 desiredVelocity = direction * movementSpeed;
+        //rigidbody.collider.material.frictionCombine = PhysicMaterialCombine.Average;
         desiredVelocity.y = rigidbody.velocity.y;
         Vector3 currentVelocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
         Vector3 setVelocity = Vector3.Lerp(currentVelocity, desiredVelocity, controllModifier);
-        setVelocity.y = rigidbody.velocity.y;        
+        setVelocity.y = rigidbody.velocity.y;
         rigidbody.velocity = setVelocity;
         AnimatorController.SetFloat("SpeedForward", Vector3.Dot(direction, transform.forward));
         AnimatorController.SetFloat("SpeedStrafe", Vector3.Dot(direction, transform.right));
@@ -46,7 +52,8 @@ public class HeroController : MonoBehaviour
     {
         if (!canJump) return;
         canJump = false;
-        rigidbody.AddForce(Vector3.up*jumpForce);
+        //characterController.Move(new Vector3(0, 100.0f, 0));
+        rigidbody.AddForce(Vector3.up * jumpForce);
         AnimatorController.SetBool("Jumping", true);
     }
 
@@ -74,10 +81,10 @@ public class HeroController : MonoBehaviour
 
     public void TakeHit(Vector3 fromVector3)
     {
-        fromVector3 = new Vector3(fromVector3.x,0.0f,fromVector3.z);
+        fromVector3 = new Vector3(fromVector3.x, 0.0f, fromVector3.z);
         controllModifier = 0;
         Vector3 myTmpVector3 = new Vector3(transform.position.x, 0, transform.position.z);
-        rigidbody.AddForce((myTmpVector3 - fromVector3)*300.0f);
-        rigidbody.AddForce(Vector3.up * 250.0f);
+        rigidbody.AddForce((myTmpVector3 - fromVector3) * 50.0f);
+        rigidbody.AddForce(Vector3.up * 100.0f);
     }
 }

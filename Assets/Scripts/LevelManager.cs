@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
 
     public static HeroController GetPlayer(int i)
     {
-        return _instance.players[i];
+         return _instance.players[i];
     }
 
     void Awake()

@@ -41,6 +41,16 @@ public class HeroController : MonoBehaviour
         }
     }
 
+    public void AttackUpDown()
+    {
+        AnimatorController.SetTrigger("AttackUpDown");
+    }
+
+    public void AttackSide()
+    {
+        AnimatorController.SetTrigger("AttackSide");
+    }
+
     public void OnLanded()
     {
         canJump = true;

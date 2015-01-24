@@ -7,6 +7,7 @@ public class GroundCheckScript : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        heroController.canJump = true;
+        if(collider.tag == "Ground")
+            heroController.canJump = true;
     }
 }

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private bool _armageddonEnabled = false;
 
     //TODO: set to all false
-    private bool[] _activePlayers = {true, true, true, true};
+    private bool[] _activePlayers = {true, true, false, false};
 
     public string[] controllerStrings;
 

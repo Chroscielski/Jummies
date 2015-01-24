@@ -50,25 +50,22 @@ public class GetInput : MonoBehaviour
         if (Input.GetButtonDown(controllerString + "Left Bump") && GameManager.JumpEnabled)
         {
             heroes[playerNumber].Jump();
-            Debug.Log(String.Format("{0} Skacze", playerNumber));
         }
 
         if (Input.GetButtonDown(controllerString + "Right Bump"))
         {
             //Attack
-            Debug.Log(String.Format("{0} Atakuje z boku", playerNumber));
             heroes[playerNumber].AttackSide();
         }
 
         if (Input.GetAxis(controllerString + "Trigger Left") > 0.9f)
         {
-            Debug.Log("Magia");
+            //Magic Chrum Chrum
         }
 
         if (Input.GetAxis(controllerString + "Trigger Right") > 0.9f)
         {
             heroes[playerNumber].AttackUpDown();
-            Debug.Log(String.Format("{0} Atakuje z góry", playerNumber));
         }
 
         float axis_X = Input.GetAxis(controllerString + "Axis X");

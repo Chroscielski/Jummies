@@ -3,8 +3,6 @@ using UnityEngine;
 using System.Collections;
 using System.ComponentModel;
 
-// TODO: Player Weapon Attack
-
 public class HeroController : MonoBehaviour
 {
     [SerializeField] private float jumpForce = 300.0f;
@@ -33,12 +31,10 @@ public class HeroController : MonoBehaviour
 
     public void Jump()
     {
-        if (canJump)
-        {
-            canJump = false;
-            rigidbody.AddForce(Vector3.up*jumpForce);
-            AnimatorController.SetBool("Jumping", true);
-        }
+        if (!canJump) return;
+        canJump = false;
+        rigidbody.AddForce(Vector3.up*jumpForce);
+        AnimatorController.SetBool("Jumping", true);
     }
 
     public void OnLanded()

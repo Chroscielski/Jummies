@@ -9,5 +9,9 @@ public class GroundCheckScript : MonoBehaviour
     {
         if(collider.tag == "Ground")
             heroController.OnLanded();
+        if (collider.tag == "DeathZone")
+        {
+            heroController.OnDeath();
+        }
     }
 }

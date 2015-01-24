@@ -46,17 +46,12 @@ public class LevelManager : MonoBehaviour
         {
             if (_playersAlive[i] && oneFound)
             {
-                WinGame(i);
+                GameManager.WinGame(i);
             }
             else if (_playersAlive[i])
             {
                 oneFound = true;
             }
         }
-    }
-
-    private void WinGame(int playerId)
-    {
-        Debug.Log("Victory to player " + playerId);
     }
 }

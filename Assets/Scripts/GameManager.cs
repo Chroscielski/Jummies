@@ -3,6 +3,8 @@
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance;
+    private int _victoriousPlayer = -1;
+
     private bool _darknessEnabled = false;
     private bool _jumpEnabled = true;
     private bool _armageddonEnabled = false;
@@ -99,5 +101,11 @@ public class GameManager : MonoBehaviour
     public static void ToggleArmageddon()
     {
         _instance._toggleArmageddon();
+    }
+
+    public static void WinGame(int playerId)
+    {
+        _instance._victoriousPlayer = playerId;
+        Application.LoadLevel("MechanicMenu");
     }
 }

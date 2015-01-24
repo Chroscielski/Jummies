@@ -5,6 +5,11 @@ public class GameManager : MonoBehaviour
     public static GameManager _instance;
     private int _victoriousPlayer = -1;
 
+    public static int VictoriousPlayer
+    {
+        get { return _instance._victoriousPlayer; }
+    }
+
     private bool _darknessEnabled = false;
     private bool _jumpEnabled = true;
     private bool _armageddonEnabled = false;

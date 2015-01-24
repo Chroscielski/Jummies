@@ -1,10 +1,16 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
+using System.ComponentModel;
 
 public class HeroController : MonoBehaviour
 {
     [SerializeField] private float jumpForce = 300.0f;
     [SerializeField] private float movementSpeed = 10.0f;
+
+    [SerializeField]
+    [Tooltip("DO NOT CHANGE. Russians Invasion Button")]
+    public bool canJump = true;
 
     public void Rotate(float xAxis, float yAxis)
     {
@@ -18,7 +24,11 @@ public class HeroController : MonoBehaviour
 
     public void Jump()
     {
-        rigidbody.AddForce(Vector3.up * jumpForce);
+        if (canJump)
+        {
+            canJump = false;
+            rigidbody.AddForce(Vector3.up*jumpForce);
+        }
     }
 
     public void TakeHit(Vector3 fromVector3)

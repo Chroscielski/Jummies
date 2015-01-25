@@ -34,7 +34,7 @@ public class GetInput : MonoBehaviour
 
         if (Input.GetAxis(controllerString + "Trigger Left") > 0.9f)
         {
-            //Magic Chrum Chrum
+            LevelManager.GetPlayer(playerNumber).Jump();
         }
 
         if (Input.GetAxis(controllerString + "Trigger Right") > 0.9f)

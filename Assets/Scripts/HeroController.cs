@@ -6,8 +6,6 @@ using System.ComponentModel;
 public class HeroController : MonoBehaviour
 {
     [SerializeField]
-    private float jumpForce = 100.0f;
-    [SerializeField]
     private float movementSpeed = 10.0f;
 
     [SerializeField]
@@ -48,7 +46,7 @@ public class HeroController : MonoBehaviour
     {
         if (!canJump) return;
         canJump = false;
-        rigidbody.AddForce(Vector3.up * jumpForce);
+        rigidbody.AddForce(Vector3.up * GameManager.JumpForce);
         AnimatorController.SetBool("Jumping", true);
     }
 

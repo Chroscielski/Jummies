@@ -16,7 +16,7 @@ public class MechanicsMenuUI : MonoBehaviour
 
     public void ToggleJump()
     {
-        _dialog.Display(string.Format("Jumping will be " + (GameManager.JumpEnabled ? "Disabled" : "Enabled")), ConfirmToggleJump, CancelToggleJump);
+        _dialog.Display(string.Format("Jumping will be " + (GameManager.PowerJumpEnabled ? "Disabled" : "Enabled")), ConfirmToggleJump, CancelToggleJump);
     }
 
     public void ConfirmToggleJump()

@@ -11,8 +11,15 @@ public class GameManager : MonoBehaviour
         get { return _instance._victoriousPlayer; }
     }
 
+    public float JumpForceBase;
+    public float JumpForceModifier;
+    public static float JumpForce
+    {
+        get { return _instance.JumpForceBase * (_instance._powerJumpEnabled ? _instance.JumpForceModifier : 1); }
+    }
+
     private bool _darknessEnabled = false;
-    private bool _jumpEnabled = true;
+    private bool _powerJumpEnabled = true;
     private bool _armageddonEnabled = false;
 
     //TODO: set to all false
@@ -40,9 +47,9 @@ public class GameManager : MonoBehaviour
         _instance._activePlayers[i] = true;
     }
 
-    public static bool JumpEnabled
+    public static bool PowerJumpEnabled
     {
-        get { return _instance._jumpEnabled; }
+        get { return _instance._powerJumpEnabled; }
     }
 
     public static bool DarknessEnabled
@@ -80,7 +87,7 @@ public class GameManager : MonoBehaviour
 
     public static void ToggleJump()
     {
-        _instance._jumpEnabled = !_instance._jumpEnabled;
+        _instance._powerJumpEnabled = !_instance._powerJumpEnabled;
     }
 
     public static void ToggleDarkness()

@@ -100,10 +100,11 @@ public class HeroController : MonoBehaviour
     public void TakeHit(Vector3 fromVector3)
     {
         if (lastHit + 0.2f > Time.time) return;
+        canJump = false;
         lastHit = Time.time;
         fromVector3 = new Vector3(fromVector3.x, 0.0f, fromVector3.z).normalized;
         controlModifier = 0;
-        rigidbody.AddExplosionForce(HitForce, new Vector3(fromVector3.x, rigidbody.position.y, fromVector3.z), 0, GameManager.HitForce / 10);
+        rigidbody.AddExplosionForce(HitForce, new Vector3(fromVector3.x, rigidbody.position.y, fromVector3.z), 0, 0);
     }
 
     public void EnablePowerJump(float time)

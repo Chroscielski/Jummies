@@ -8,7 +8,7 @@ public class MeleeCollisionChecker : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.tag == "Player")
+        if (col.tag == "Player" && col.GetComponent<HeroController>() != heroController)
         {
             var cont = col.gameObject.GetComponent<HeroController>();
             if (cont != null)

@@ -21,13 +21,16 @@ public class MechanicsMenuUI : MonoBehaviour
 
     public void ConfirmToggleJump()
     {
+        Debug.Log("AAA");
         GameManager.ToggleJump();
         GameManager.StartRound();
     }
 
     public void CancelToggleJump()
     {
+        Debug.Log("BBB");
         JumpToggle.isOn = !JumpToggle.isOn;
+        JumpToggle.Select();
     }
 
     public void ToggleDarkness()
@@ -44,6 +47,7 @@ public class MechanicsMenuUI : MonoBehaviour
     public void CancelToggleDarkness()
     {
         DarknessToggle.isOn = !DarknessToggle.isOn;
+        DarknessToggle.Select();
     }
 
     public void ToggleArmageddon()
@@ -60,5 +64,6 @@ public class MechanicsMenuUI : MonoBehaviour
     public void CancelToggleArmageddon()
     {
         ArmageddonToggle.isOn = !ArmageddonToggle.isOn;
+        ArmageddonToggle.Select();
     }
 }

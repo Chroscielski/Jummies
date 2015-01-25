@@ -12,6 +12,8 @@ public class HeroController : MonoBehaviour
     [Tooltip("DO NOT CHANGE. Russians Invasion Button")]
     public bool canJump = true;
 
+    public Collider weaponCollider;
+
     public Animator AnimatorController;
     private float ControllLossAfterHit = 6.0f;
 
@@ -63,14 +65,23 @@ public class HeroController : MonoBehaviour
         AnimatorController.SetBool("Jumping", true);
     }
 
+    public IEnumerator EnableWeapon(float duration)
+    {
+        weaponCollider.enabled = true;
+        yield return new WaitForSeconds(duration);
+        weaponCollider.enabled = false;
+    }
+
     public void AttackUpDown()
     {
         AnimatorController.SetTrigger("AttackUpDown");
+        StartCoroutine(EnableWeapon(1));
     }
 
     public void AttackSide()
     {
         AnimatorController.SetTrigger("AttackSide");
+        StartCoroutine(EnableWeapon(0.7f));
     }
 
     public void OnLanded()
@@ -85,11 +96,14 @@ public class HeroController : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private float lastHit = 0;
     public void TakeHit(Vector3 fromVector3)
     {
+        if (lastHit + 0.2f > Time.time) return;
+        lastHit = Time.time;
         fromVector3 = new Vector3(fromVector3.x, 0.0f, fromVector3.z).normalized;
         controlModifier = 0;
-        rigidbody.AddExplosionForce(HitForce, new Vector3(fromVector3.x, rigidbody.position.y, fromVector3.z), 0, GameManager.HitForce / 5);
+        rigidbody.AddExplosionForce(HitForce, new Vector3(fromVector3.x, rigidbody.position.y, fromVector3.z), 0, GameManager.HitForce / 10);
     }
 
     public void EnablePowerJump(float time)

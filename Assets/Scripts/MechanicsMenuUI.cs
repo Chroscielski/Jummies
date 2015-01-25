@@ -26,10 +26,21 @@ public class MechanicsMenuUI : MonoBehaviour
         JumpToggle.Select();
     }
 
+
+    public void ToggleSuperHit()
+    {
+        _dialog.Display(string.Format("Super hit will be " + (GameManager.SuperHitEnabled ? "Disabled" : "Enabled")), ConfirmToggleSuperHit, CancelToggleSuperHit);
+    }
+
     public void ConfirmToggleSuperHit()
     {
-        SuperHitToggle.isOn = !SuperHitToggle.isOn;
+        GameManager.ToggleSuperHit();
+    }
 
+    public void CancelToggleSuperHit()
+    {
+        SuperHitToggle.isOn = !SuperHitToggle.isOn;
+        SuperHitToggle.Select();
     }
 
     public void ToggleDarkness()

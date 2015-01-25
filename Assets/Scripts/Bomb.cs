@@ -32,7 +32,9 @@ public class Bomb : MonoBehaviour
         var colliders = Physics.OverlapSphere(explosionPos, explosionRadius, 1 << playersLayer);
         foreach (var hit in colliders)
         {
-            hit.GetComponent<HeroController>().TakeHit(transform.position);
+            var heroController = hit.GetComponent<HeroController>();
+            if (heroController == null) continue;
+            heroController.TakeHit(transform.position);
         }
         GameObject explosion = (GameObject)Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
         Destroy(explosion, 5);

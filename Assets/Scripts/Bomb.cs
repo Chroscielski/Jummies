@@ -2,6 +2,7 @@
 
 public class Bomb : MonoBehaviour
 {
+    private const int playersLayer = 10;
     public float explosionRadius;
     public float explosionForce;
 
@@ -10,13 +11,10 @@ public class Bomb : MonoBehaviour
     private void OnCollisionEnter(Collision col)
     {
         var explosionPos = transform.position;
-        var colliders = Physics.OverlapSphere(explosionPos, explosionRadius);
+        var colliders = Physics.OverlapSphere(explosionPos, explosionRadius, 1 << playersLayer);
         foreach (var hit in colliders)
         {
-            if (hit && hit.rigidbody && hit.rigidbody != rigidbody)
-            {
-                hit.rigidbody.AddExplosionForce(explosionForce, explosionPos, explosionRadius, 3.0F);
-            }
+            hit.GetComponent<HeroController>().TakeHit(transform.position);
         }
         GameObject explosion = (GameObject)Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
         Destroy(explosion, 5);

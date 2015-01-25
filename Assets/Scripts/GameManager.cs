@@ -11,15 +11,24 @@ public class GameManager : MonoBehaviour
         get { return _instance._victoriousPlayer; }
     }
 
+    private bool _powerJumpEnabled;
     public float JumpForceBase;
-    public float JumpForceModifier;
+    public float PowerJumpModifier;
     public static float JumpForce
     {
-        get { return _instance.JumpForceBase * (_instance._powerJumpEnabled ? _instance.JumpForceModifier : 1); }
+        get { return _instance.JumpForceBase * (_instance._powerJumpEnabled ? _instance.PowerJumpModifier : 1); }
+    }
+
+    private bool _powerHitEnabled = false;
+    public float HitForceBase;
+    public float PowerHitModifier;
+
+    public static float HitForce
+    {
+        get { return _instance.HitForceBase*(_instance._powerHitEnabled ? _instance.PowerHitModifier : 1); }
     }
 
     private bool _darknessEnabled = false;
-    private bool _powerJumpEnabled = true;
     private bool _armageddonEnabled = false;
 
     //TODO: set to all false

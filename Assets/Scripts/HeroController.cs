@@ -13,7 +13,7 @@ public class HeroController : MonoBehaviour
     public bool canJump = true;
 
     public Animator AnimatorController;
-    public float ControllLossAfterHit = 2.0f;
+    public float ControllLossAfterHit = 6.0f;
 
     public int PlayerId;
 

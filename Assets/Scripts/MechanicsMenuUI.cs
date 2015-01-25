@@ -11,6 +11,15 @@ public class MechanicsMenuUI : MonoBehaviour
     public Toggle ArmageddonToggle;
     public Toggle PowerUpToggle;
 
+    void Awake()
+    {
+        JumpToggle.isOn = GameManager.PowerJumpEnabled;
+        SuperHitToggle.isOn = GameManager.SuperHitEnabled;
+        DarknessToggle.isOn = GameManager.DarknessEnabled;
+        ArmageddonToggle.isOn = GameManager.ArmageddonEnabled;
+        PowerUpToggle.isOn = GameManager.PowerUpsEnabled;
+    }
+
     public void TogglePowerUp()
     {
         _dialog.Display(string.Format("Power-up will be " + (GameManager.PowerUpsEnabled ? "Disabled" : "Enabled")), ConfirmTogglePowerUps, CancelTogglePowerUps);

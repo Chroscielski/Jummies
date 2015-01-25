@@ -12,7 +12,7 @@ public class MeleeCollisionChecker : MonoBehaviour
         {
             var cont = col.gameObject.GetComponent<HeroController>();
             if (cont != null)
-                cont.TakeHit(transform.position);
+                cont.TakeHit(transform.position, heroController.PowerAttack ? 1.6f : 1);
         }
         else if (col.tag == "SuperBox")
         {

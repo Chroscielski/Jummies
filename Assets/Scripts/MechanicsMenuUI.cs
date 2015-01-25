@@ -8,6 +8,12 @@ public class MechanicsMenuUI : MonoBehaviour
     public Toggle DarknessToggle;
     public Toggle ArmageddonToggle;
 
+    void Awake()
+    {
+        
+        
+    }
+
     public void ToggleJump()
     {
         _dialog.Display(string.Format("Jumping will be " + (GameManager.JumpEnabled ? "Disabled" : "Enabled")), ConfirmToggleJump, CancelToggleJump);

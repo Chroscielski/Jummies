@@ -12,6 +12,9 @@ public class HeroController : MonoBehaviour
     [Tooltip("DO NOT CHANGE. Russians Invasion Button")]
     public bool canJump = true;
 
+    [SerializeField]
+    public AudioClip[] punches;
+
     public Collider weaponCollider;
 
     public Animator AnimatorController;
@@ -24,6 +27,12 @@ public class HeroController : MonoBehaviour
 
     public int PlayerId;
 
+    public void PlayPunchSound()
+    {
+        audio.clip = punches[UnityEngine.Random.Range(0, punches.Length-1)];
+        audio.Play();
+    }
+
     private float JumpForce
     {
         get { return GameManager.JumpForce * (_powerJumpTimeout > Time.time ? GameManager.JumpForceModifier : 1); }
@@ -31,7 +40,7 @@ public class HeroController : MonoBehaviour
 
     private float HitForce
     {
-        get { return GameManager.HitForce*(_superHitTimeout > Time.time ? GameManager.SuperHitModifier : 1); }
+        get { return GameManager.HitForce * (_superHitTimeout > Time.time ? GameManager.SuperHitModifier : 1); }
     }
 
     private float controlModifier = 1.0f;

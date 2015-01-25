@@ -20,6 +20,8 @@ public class HeroController : MonoBehaviour
     public float _powerJumpTimeout = 0;
     private float _superHitTimeout = 0;
 
+    public bool PowerAttack = false;
+
     public int PlayerId;
 
     private float JumpForce
@@ -74,12 +76,14 @@ public class HeroController : MonoBehaviour
 
     public void AttackUpDown()
     {
+        PowerAttack = true;
         AnimatorController.SetTrigger("AttackUpDown");
         StartCoroutine(EnableWeapon(1));
     }
 
     public void AttackSide()
     {
+        PowerAttack = false;
         AnimatorController.SetTrigger("AttackSide");
         StartCoroutine(EnableWeapon(0.7f));
     }
@@ -97,13 +101,14 @@ public class HeroController : MonoBehaviour
     }
 
     private float lastHit = 0;
-    public void TakeHit(Vector3 fromVector3)
+    public void TakeHit(Vector3 fromVector3, float multiplier)
     {
         if (lastHit + 0.2f > Time.time) return;
+        canJump = false;
         lastHit = Time.time;
         fromVector3 = new Vector3(fromVector3.x, 0.0f, fromVector3.z).normalized;
         controlModifier = 0;
-        rigidbody.AddExplosionForce(HitForce, new Vector3(fromVector3.x, rigidbody.position.y, fromVector3.z), 0, GameManager.HitForce / 10);
+        rigidbody.AddExplosionForce(HitForce, new Vector3(fromVector3.x, rigidbody.position.y, fromVector3.z), 0, 0);
     }
 
     public void EnablePowerJump(float time)

@@ -34,7 +34,7 @@ public class Bomb : MonoBehaviour
         {
             var heroController = hit.GetComponent<HeroController>();
             if (heroController == null) continue;
-            heroController.TakeHit(transform.position);
+            heroController.TakeHit(transform.position, 5);
         }
         GameObject explosion = (GameObject)Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
         Destroy(explosion, 5);

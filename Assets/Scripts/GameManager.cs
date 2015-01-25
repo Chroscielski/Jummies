@@ -64,8 +64,10 @@ public class GameManager : MonoBehaviour
         else if (_instance != this)
         {
             Destroy(gameObject);
+            return;
         }
         controllerStrings = new string[4];
+        DontDestroyOnLoad(gameObject);
     }
 
     public void _startRound()

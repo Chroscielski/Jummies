@@ -20,6 +20,8 @@ public class GetInput : MonoBehaviour
     void GetPlayerInput(int playerNumber)
     {
         var controllerString = GameManager.GetControllerString(playerNumber);
+        Debug.Log(controllerString);
+        Debug.Log(playerNumber);
 
         if (Input.GetButtonDown(controllerString + "Left Bump") && GameManager.JumpEnabled)
         {

@@ -6,6 +6,7 @@ public class LevelInitializer : MonoBehaviour
     public float DarknessMultiplier;
 
     public GameObject ArmageddonPrefab;
+    public GameObject PowerUpSpawner;
 
     public GameObject[] PlayersPrefabs = new GameObject[4];
     public Skybox CameraSkybox;
@@ -24,6 +25,11 @@ public class LevelInitializer : MonoBehaviour
         if (GameManager.ArmageddonEnabled)
         {
             Instantiate(ArmageddonPrefab);
+        }
+
+        if (GameManager.PowerUpsEnabled)
+        {
+            Instantiate(PowerUpSpawner);
         }
 
         for (int i = 0; i < 4; i++)

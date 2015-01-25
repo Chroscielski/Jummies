@@ -42,10 +42,10 @@ public class ControllerChoice : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
             if (Input.GetButtonDown("Joy " + (i + 1).ToString() + " Button Start") && nextPlayer > 1)
-                Application.LoadLevel("TestScene_MP");
+                GameManager.StartRound();
         if (Input.GetKeyDown(KeyCode.Return) && nextPlayer > 1)
         {
-            Application.LoadLevel("TestScene_MP");            
+            GameManager.StartRound();      
         }
     }
 

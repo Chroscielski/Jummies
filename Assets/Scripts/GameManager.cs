@@ -19,13 +19,24 @@ public class GameManager : MonoBehaviour
         get { return _instance.JumpForceBase * (_instance._powerJumpEnabled ? _instance.PowerJumpModifier : 1); }
     }
 
-    private bool _powerHitEnabled = false;
+    private bool _superHitEnabled = false;
+
+    public static bool SuperHitEnabled
+    {
+        get { return _instance._superHitEnabled;}
+    }
+
     public float HitForceBase;
-    public float PowerHitModifier;
+    public float SuperHitModifier;
+
+    public static void ToggleSuperHit()
+    {
+        _instance._superHitEnabled = !_instance._superHitEnabled;
+    }
 
     public static float HitForce
     {
-        get { return _instance.HitForceBase*(_instance._powerHitEnabled ? _instance.PowerHitModifier : 1); }
+        get { return _instance.HitForceBase*(_instance._superHitEnabled ? _instance.SuperHitModifier : 1); }
     }
 
     private bool _darknessEnabled = false;
@@ -108,6 +119,8 @@ public class GameManager : MonoBehaviour
     {
         _instance._armageddonEnabled = !_instance._armageddonEnabled;
     }
+
+
 
     public static void WinGame(int playerId)
     {

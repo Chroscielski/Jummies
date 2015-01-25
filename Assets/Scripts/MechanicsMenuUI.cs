@@ -5,14 +5,9 @@ public class MechanicsMenuUI : MonoBehaviour
 {
     public Dialog _dialog;
     public Toggle JumpToggle;
+    public Toggle SuperHitToggle;
     public Toggle DarknessToggle;
     public Toggle ArmageddonToggle;
-
-    void Awake()
-    {
-        
-        
-    }
 
     public void ToggleJump()
     {
@@ -21,16 +16,20 @@ public class MechanicsMenuUI : MonoBehaviour
 
     public void ConfirmToggleJump()
     {
-        Debug.Log("AAA");
         GameManager.ToggleJump();
         GameManager.StartRound();
     }
 
     public void CancelToggleJump()
     {
-        Debug.Log("BBB");
         JumpToggle.isOn = !JumpToggle.isOn;
         JumpToggle.Select();
+    }
+
+    public void ConfirmToggleSuperHit()
+    {
+        SuperHitToggle.isOn = !SuperHitToggle.isOn;
+
     }
 
     public void ToggleDarkness()

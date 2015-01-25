@@ -29,14 +29,14 @@ public class ControllerChoice : MonoBehaviour
             GameManager.SetControllerString(1, "Joy 2 ");
             setPlayer(1);
         }
-        if (Input.GetButtonDown("Keyboard Button A"))
+        if (Input.GetButtonDown("Joy 3 Button A"))
         {
-            GameManager.SetControllerString(2, "Keyboard ");
+            GameManager.SetControllerString(2, "Joy 3 ");
             setPlayer(2);
         }
-        if (Input.GetButtonDown("Mouse Button A"))
+        if (Input.GetButtonDown("Joy 4 Button A"))
         {
-            GameManager.SetControllerString(3, "Mouse ");
+            GameManager.SetControllerString(3, "Joy 4 ");
             setPlayer(3);
         }
 

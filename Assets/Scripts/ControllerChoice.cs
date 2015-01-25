@@ -8,6 +8,8 @@ public class ControllerChoice : MonoBehaviour
 
     public Text[] playerTexts;
 
+    public MenuCharacterController[] players;
+
     public void Start()
     {
     }
@@ -53,6 +55,7 @@ public class ControllerChoice : MonoBehaviour
     {
         GameManager.SetPlayerActive(playerNumber);
         playerTexts[playerNumber].gameObject.SetActive(false);
+        players[playerNumber].playChosenOneAnim();
         nextPlayer++;
     }
 }

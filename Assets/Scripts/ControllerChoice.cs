@@ -52,7 +52,7 @@ public class ControllerChoice : MonoBehaviour
     void setPlayer(int playerNumber)
     {
         GameManager.SetPlayerActive(playerNumber);
-        playerTexts[playerNumber].gameObject.SetActive(true);
+        playerTexts[playerNumber].gameObject.SetActive(false);
         nextPlayer++;
     }
 }

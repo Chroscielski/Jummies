@@ -47,8 +47,8 @@ public class GetInput : MonoBehaviour
         float axis_3 = Mathf.Clamp(Input.GetAxis(controllerString + "Axis 3"), -1, 1);
         float axis_4 = Mathf.Clamp(Input.GetAxis(controllerString + "Axis 4"), -1, 1);
 
-        LevelManager.GetPlayer(playerNumber).Move(axis_X, -axis_Y);
+        LevelManager.GetPlayer(playerNumber).Move(axis_X, axis_Y);
         if (axis_3 != 0.0f || axis_4 != 0.0f)
-            LevelManager.GetPlayer(playerNumber).Rotate(axis_3, -axis_4);
+            LevelManager.GetPlayer(playerNumber).Rotate(axis_3, axis_4);
     }
 }

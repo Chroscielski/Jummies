@@ -21,6 +21,17 @@ public class GameManager : MonoBehaviour
 
     private bool _superHitEnabled = false;
 
+    private bool _powerUpEnabled;
+    public static bool PowerUpsEnabled
+    {
+        get { return _instance._powerUpEnabled; }
+    }
+
+    public static void TogglePowerUps()
+    {
+        _instance._powerUpEnabled = !_instance._powerUpEnabled;
+    }
+
     public static bool SuperHitEnabled
     {
         get { return _instance._superHitEnabled;}

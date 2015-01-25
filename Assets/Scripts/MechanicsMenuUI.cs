@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Net;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class MechanicsMenuUI : MonoBehaviour
@@ -8,6 +9,24 @@ public class MechanicsMenuUI : MonoBehaviour
     public Toggle SuperHitToggle;
     public Toggle DarknessToggle;
     public Toggle ArmageddonToggle;
+    public Toggle PowerUpToggle;
+
+    public void TogglePowerUp()
+    {
+        _dialog.Display(string.Format("Power-up will be " + (GameManager.PowerUpsEnabled ? "Disabled" : "Enabled")), ConfirmTogglePowerUps, CancelTogglePowerUps);
+    }
+
+    public void ConfirmTogglePowerUps()
+    {
+        GameManager.TogglePowerUps();
+        GameManager.StartRound();
+    }
+
+    public void CancelTogglePowerUps()
+    {
+        PowerUpToggle.isOn = !PowerUpToggle.isOn;
+        JumpToggle.Select();
+    }
 
     public void ToggleJump()
     {

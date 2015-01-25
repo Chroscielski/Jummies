@@ -15,7 +15,20 @@ public class HeroController : MonoBehaviour
     public Animator AnimatorController;
     private float ControllLossAfterHit = 6.0f;
 
+    public float _powerJumpTimeout = 0;
+    private float _superHitTimeout = 0;
+
     public int PlayerId;
+
+    private float JumpForce
+    {
+        get { return GameManager.JumpForce * (_powerJumpTimeout > Time.time ? GameManager.JumpForceModifier : 1); }
+    }
+
+    private float HitForce
+    {
+        get { return GameManager.HitForce*(_superHitTimeout > Time.time ? GameManager.SuperHitModifier : 1); }
+    }
 
     private float controlModifier = 1.0f;
 
@@ -46,7 +59,7 @@ public class HeroController : MonoBehaviour
     {
         if (!canJump) return;
         canJump = false;
-        rigidbody.AddForce(Vector3.up * GameManager.JumpForce);
+        rigidbody.AddForce(Vector3.up * JumpForce);
         AnimatorController.SetBool("Jumping", true);
     }
 
@@ -76,6 +89,16 @@ public class HeroController : MonoBehaviour
     {
         fromVector3 = new Vector3(fromVector3.x, 0.0f, fromVector3.z).normalized;
         controlModifier = 0;
-        rigidbody.AddExplosionForce(GameManager.HitForce, new Vector3(fromVector3.x, rigidbody.position.y, fromVector3.z), 0, GameManager.HitForce / 5);
+        rigidbody.AddExplosionForce(HitForce, new Vector3(fromVector3.x, rigidbody.position.y, fromVector3.z), 0, GameManager.HitForce / 5);
+    }
+
+    public void EnablePowerJump(float time)
+    {
+        _powerJumpTimeout = Time.time + time;
+    }
+
+    public void EnableSuperHit(float time)
+    {
+        _superHitTimeout = Time.time + time;
     }
 }

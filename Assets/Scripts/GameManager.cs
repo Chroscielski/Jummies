@@ -27,16 +27,27 @@ public class GameManager : MonoBehaviour
     }
 
     public float HitForceBase;
-    public float SuperHitModifier;
+
+    public float _superHitModifier;
+    public static float SuperHitModifier
+    {
+        get { return _instance._superHitModifier; }
+    }
 
     public static void ToggleSuperHit()
     {
         _instance._superHitEnabled = !_instance._superHitEnabled;
     }
 
+    public float _jumpModifier;
+    public static float JumpForceModifier
+    {
+        get { return _instance._jumpModifier; }
+    }
+
     public static float HitForce
     {
-        get { return _instance.HitForceBase*(_instance._superHitEnabled ? _instance.SuperHitModifier : 1); }
+        get { return _instance.HitForceBase*(_instance._superHitEnabled ? SuperHitModifier : 1); }
     }
 
     private bool _darknessEnabled = false;

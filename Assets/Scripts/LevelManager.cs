@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
 
     public static void AddPlayer(HeroController hero)
     {
-        _instance.players[_instance.PlayersNumber] = hero;
+        _instance.players[hero.PlayerId] = hero;
         _instance.PlayersNumber++;
     }
 

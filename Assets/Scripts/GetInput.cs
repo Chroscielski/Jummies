@@ -21,7 +21,7 @@ public class GetInput : MonoBehaviour
     {
         var controllerString = GameManager.GetControllerString(playerNumber);
 
-        if (Input.GetButtonDown(controllerString + "Left Bump") && GameManager.JumpEnabled)
+        if (Input.GetButtonDown(controllerString + "Left Bump"))
         {
             LevelManager.GetPlayer(playerNumber).Jump();
         }
@@ -42,10 +42,10 @@ public class GetInput : MonoBehaviour
             LevelManager.GetPlayer(playerNumber).AttackUpDown();
         }
 
-        float axis_X = Input.GetAxis(controllerString + "Axis X");
-        float axis_Y = Input.GetAxis(controllerString + "Axis Y");
-        float axis_3 = Input.GetAxis(controllerString + "Axis 3");
-        float axis_4 = Input.GetAxis(controllerString + "Axis 4");
+        float axis_X = Mathf.Clamp(Input.GetAxis(controllerString + "Axis X"), -1, 1);
+        float axis_Y = Mathf.Clamp(Input.GetAxis(controllerString + "Axis Y"), -1, 1);
+        float axis_3 = Mathf.Clamp(Input.GetAxis(controllerString + "Axis 3"), -1, 1);
+        float axis_4 = Mathf.Clamp(Input.GetAxis(controllerString + "Axis 4"), -1, 1);
 
         LevelManager.GetPlayer(playerNumber).Move(axis_X, -axis_Y);
         if (axis_3 != 0.0f || axis_4 != 0.0f)

@@ -8,6 +8,7 @@ public class LevelInitializer : MonoBehaviour
     public GameObject ArmageddonPrefab;
 
     public GameObject[] PlayersPrefabs = new GameObject[4];
+    public Skybox CameraSkybox;
 
     void Start()
     {
@@ -15,7 +16,8 @@ public class LevelInitializer : MonoBehaviour
         {
             foreach (var light in lights)
             {
-                light.intensity *= 0.1f;
+                light.intensity *= 0.05f;
+                CameraSkybox.enabled = false;
             }
         }
 

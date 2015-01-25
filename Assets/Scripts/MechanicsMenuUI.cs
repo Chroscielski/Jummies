@@ -5,12 +5,13 @@ public class MechanicsMenuUI : MonoBehaviour
 {
     public Dialog _dialog;
     public Toggle JumpToggle;
+    public Toggle SuperHitToggle;
     public Toggle DarknessToggle;
     public Toggle ArmageddonToggle;
 
     public void ToggleJump()
     {
-        _dialog.Display(string.Format("Jumping will be " + (GameManager.JumpEnabled ? "Disabled" : "Enabled")), ConfirmToggleJump, CancelToggleJump);
+        _dialog.Display(string.Format("Jumping will be " + (GameManager.PowerJumpEnabled ? "Disabled" : "Enabled")), ConfirmToggleJump, CancelToggleJump);
     }
 
     public void ConfirmToggleJump()
@@ -22,6 +23,24 @@ public class MechanicsMenuUI : MonoBehaviour
     public void CancelToggleJump()
     {
         JumpToggle.isOn = !JumpToggle.isOn;
+        JumpToggle.Select();
+    }
+
+
+    public void ToggleSuperHit()
+    {
+        _dialog.Display(string.Format("Super hit will be " + (GameManager.SuperHitEnabled ? "Disabled" : "Enabled")), ConfirmToggleSuperHit, CancelToggleSuperHit);
+    }
+
+    public void ConfirmToggleSuperHit()
+    {
+        GameManager.ToggleSuperHit();
+    }
+
+    public void CancelToggleSuperHit()
+    {
+        SuperHitToggle.isOn = !SuperHitToggle.isOn;
+        SuperHitToggle.Select();
     }
 
     public void ToggleDarkness()
@@ -38,6 +57,7 @@ public class MechanicsMenuUI : MonoBehaviour
     public void CancelToggleDarkness()
     {
         DarknessToggle.isOn = !DarknessToggle.isOn;
+        DarknessToggle.Select();
     }
 
     public void ToggleArmageddon()
@@ -54,5 +74,6 @@ public class MechanicsMenuUI : MonoBehaviour
     public void CancelToggleArmageddon()
     {
         ArmageddonToggle.isOn = !ArmageddonToggle.isOn;
+        ArmageddonToggle.Select();
     }
 }

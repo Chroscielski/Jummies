@@ -34,7 +34,5 @@ public class MeleeCollisionChecker : MonoBehaviour
                 }
             }
         }
-
-        heroController.PlayPunchSound();
     }
 }

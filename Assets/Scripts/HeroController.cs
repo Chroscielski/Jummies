@@ -15,6 +15,9 @@ public class HeroController : MonoBehaviour
     [SerializeField]
     public AudioClip[] punches;
 
+    [SerializeField]
+    public AudioClip woosh;
+
     public Collider weaponCollider;
 
     public Animator AnimatorController;
@@ -29,7 +32,13 @@ public class HeroController : MonoBehaviour
 
     public void PlayPunchSound()
     {
-        audio.clip = punches[UnityEngine.Random.Range(0, punches.Length-1)];
+        audio.clip = punches[UnityEngine.Random.Range(0, punches.Length - 1)];
+        audio.Play();
+    }
+
+    public void PlayWooshSound()
+    {
+        audio.clip = woosh;
         audio.Play();
     }
 
@@ -85,6 +94,7 @@ public class HeroController : MonoBehaviour
 
     public void AttackUpDown()
     {
+        PlayWooshSound();
         PowerAttack = true;
         AnimatorController.SetTrigger("AttackUpDown");
         StartCoroutine(EnableWeapon(1));
@@ -92,6 +102,7 @@ public class HeroController : MonoBehaviour
 
     public void AttackSide()
     {
+        PlayWooshSound();
         PowerAttack = false;
         AnimatorController.SetTrigger("AttackSide");
         StartCoroutine(EnableWeapon(0.7f));
@@ -118,6 +129,7 @@ public class HeroController : MonoBehaviour
         fromVector3 = new Vector3(fromVector3.x, 0.0f, fromVector3.z).normalized;
         controlModifier = 0;
         rigidbody.AddExplosionForce(HitForce, new Vector3(fromVector3.x, rigidbody.position.y, fromVector3.z), 0, 0);
+        PlayPunchSound();
     }
 
     public void EnablePowerJump(float time)

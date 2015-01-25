@@ -54,6 +54,7 @@ public class MechanicsMenuUI : MonoBehaviour
     public void ConfirmToggleSuperHit()
     {
         GameManager.ToggleSuperHit();
+        GameManager.StartRound();
     }
 
     public void CancelToggleSuperHit()
